@@ -79,4 +79,8 @@ function preview() {
   requestAnimationFrame(tick);
 }
 
-renderer.load().then(() => isTauri() ? desktop() : preview()).catch(fail);
+if (!isTauri() && new URLSearchParams(location.search).get('study') === 'rig') {
+  import('./motion/preview').then(({ motionPreview }) => motionPreview()).catch(fail);
+} else {
+  renderer.load().then(() => isTauri() ? desktop() : preview()).catch(fail);
+}

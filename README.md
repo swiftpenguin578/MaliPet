@@ -21,6 +21,13 @@ pnpm tauri dev
 
 For the browser-only motion study, run `pnpm dev` and open the local address shown. Its pose controls and light/dark preview are development tools, not part of the desktop pet.
 
+The new **continuous 2D rig study** is at `http://127.0.0.1:1420/?study=rig`.
+It plays a 24-second walk → stop → sit → lie → curl → sleep → wake → stretch →
+walk sequence. Pause, scrub, slow playback, switch backgrounds or enable size
+guides. Add `&t=12` to open a paused moment. This is a review preview, not yet the
+desktop renderer; the approved sleeping illustrations remain untouched. See
+[the rig notes](docs/animation-rig-study.md) for its current limitations.
+
 ```sh
 pnpm test
 pnpm build
