@@ -1,0 +1,18 @@
+:root { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color-scheme: light; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; user-select: none; }
+#cat { display: block; width: 280px; height: 220px; touch-action: none; cursor: grab; }
+#cat:active { cursor: grabbing; }
+#error { color: #bc445a; font-size: 11px; position: absolute; inset: 8px; pointer-events: none; }
+.preview { background: #f3f0e9; color: #252925; }
+.preview::after { content: ''; position: fixed; bottom: 34px; left: 5%; right: 5%; height: 1px; background: #c8cdc3; pointer-events: none; }
+.preview #cat { position: fixed; z-index: 2; }
+.preview header { margin: 64px 7vw 28px; max-width: 660px; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .18em; color: #737e71; }
+h1 { font-size: clamp(36px, 5vw, 64px); font-family: Georgia, serif; font-weight: 400; letter-spacing: -.045em; margin: 18px 0; }
+.preview p { color: #6b7367; font-size: 15px; }
+nav { margin: 0 7vw; display: flex; flex-wrap: wrap; gap: 7px; max-width: 780px; }
+button { border: 1px solid #cdd1c7; background: transparent; border-radius: 20px; color: inherit; padding: 9px 15px; cursor: pointer; font: inherit; font-size: 12px; }
+button:hover, button.active { background: #354635; border-color: #354635; color: #fff; }
+footer { position: fixed; bottom: 11px; left: 7vw; color: #81877b; font-size: 10px; }
+.preview.dark { background: #242925; color: #e2e6dd; }
+.dark p, .dark .eyebrow, .dark footer { color: #a6b0a0; }

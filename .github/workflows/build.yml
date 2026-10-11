@@ -1,0 +1,44 @@
+name: Prototype builds
+on:
+  push:
+    branches: [main, desktop-prototype]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            bundles: app
+          - os: windows-latest
+            bundles: nsis
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: pnpm/action-setup@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm build
+      - run: cargo test --manifest-path src-tauri/Cargo.toml --locked
+      - run: pnpm tauri build --bundles ${{ matrix.bundles }}
+      - name: Preserve macOS bundle permissions
+        if: runner.os == 'macOS'
+        run: ditto -c -k --sequesterRsrc --keepParent src-tauri/target/release/bundle/macos/MaliPet.app MaliPet-macOS.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MaliPet-${{ runner.os }}-prototype
+          path: |
+            MaliPet-macOS.zip
+            src-tauri/target/release/bundle/nsis/*.exe
+          if-no-files-found: error
