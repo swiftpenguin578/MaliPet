@@ -1,0 +1,6 @@
+{
+  "identifier": "pet",
+  "description": "Local pet window only; no filesystem, shell or network access.",
+  "windows": ["pet"],
+  "permissions": ["core:event:allow-listen", "core:event:allow-unlisten"]
+}

@@ -12,3 +12,11 @@ IMG_*.heic
 .env
 .env.*
 !.env.example
+
+node_modules/
+dist/
+.tools/
+.pnpm-store/
+src-tauri/target/
+src-tauri/gen/
+output/
