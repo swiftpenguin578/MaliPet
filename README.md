@@ -19,7 +19,7 @@ Keep this a modest, standalone personal project. Cursor-watching and toys are de
 
 Base the character on the owner's cat: glossy black fur, yellow-green eyes, expressive ears, and a long tail. The reference photos also suggest a distinctive little tongue-out expression and relaxed sleeping poses.
 
-Soft 2D illustration is the proposed direction; the final style still needs agreement. Use subtle charcoal highlights so the black silhouette remains readable against dark desktops.
+Soft 2D illustration is the chosen direction. The first concept will be reviewed before animation development. Use subtle charcoal highlights so the black silhouette remains readable against dark desktops.
 
 Original reference photographs remain local and are not included in this public repository.
 
@@ -38,7 +38,7 @@ Tauri's transparent windows on macOS require its private-API option, so this app
 
 ## Decisions still open
 
-- Final illustration style and on-screen size.
+- Approval of the illustrated character design and on-screen size.
 - Whether dragging leaves the cat at the dropped position or returns it to the bottom edge.
 - Petting gesture and reaction.
 - Source-code and artwork licensing before the first release.
