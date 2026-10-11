@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+
+# Personal reference images must not be published accidentally.
+/references/
+/private/
+IMG_*.jpeg
+IMG_*.jpg
+IMG_*.heic
+
+# Local credentials and environment settings.
+.env
+.env.*
+!.env.example
