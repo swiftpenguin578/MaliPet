@@ -1,5 +1,12 @@
 # Prototype verification
 
+## Cross-platform build results — 11 October 2026
+
+[GitHub Actions run 38131221000](https://github.com/swiftpenguin578/MaliPet/actions/runs/38131221000)
+passed for commit `2ec694a` on both macOS and Windows. Each job passed the
+renderer test, TypeScript production build and five Rust tests, then packaged
+and uploaded an unsigned macOS app or Windows NSIS installer.
+
 ## Verified locally on macOS
 
 - TypeScript compilation and Vite production build.
@@ -18,6 +25,11 @@
 Desktop automation could inspect the native window and screenshot, but lost its
 window connection when attempting the context menu. Do not treat that as a
 passed native interaction test.
+
+A fresh launch was checked again after resuming: the cat rendered and changed
+poses, but coordinate clicks were rejected by the desktop automation tool with
+`windowNotFoundAtPosition` or a changed-window error before input was delivered.
+This does not establish whether a physical mouse interaction succeeds or fails.
 
 - Click the cat to pet; drag upward and release to check the gentle landing.
 - Type in another app while Mali walks; verify she never takes keyboard focus.
